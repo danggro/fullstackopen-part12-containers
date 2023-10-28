@@ -1,0 +1,24 @@
+services:
+  app:
+    image: patientor-frontend-dev
+    build:
+      context: ./patientor-frontend
+      dockerfile: dev.Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./patientor-frontend/:/usr/src/app
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost:3001/api
+    container_name: patientor-frontend-dev
+
+  server:
+    image: patientor-backend-dev
+    build:
+      context: ./patientor-backend
+      dockerfile: dev.Dockerfile
+    ports:
+      - 3001:3001
+    volumes:
+      - ./patientor-backend/:/usr/src/app
+    container_name: patientor-backend-dev

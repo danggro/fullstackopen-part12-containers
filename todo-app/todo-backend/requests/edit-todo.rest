@@ -1,0 +1,10 @@
+PUT http://localhost:8080/api/todos/6537d1c523f05796068ced56
+
+###  
+POST http://localhost:3000/todos
+Content-Type: application/json
+
+ {
+    "text": "Count Redis 7",
+    "done": false
+  }
